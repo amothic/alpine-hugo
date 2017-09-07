@@ -12,9 +12,14 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Submodule init
+          command: |
+            git submodule init
+            git submodule update
+      - run:
           name: Build
           command: |
-            hugo
+            HUGO_ENV=production hugo -v
       - run:
           name: Sync S3
           command: |
