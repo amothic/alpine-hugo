@@ -7,8 +7,8 @@ RUN sed -ex \
         curl \
     && apk add --no-cache --virtual .run-deps \
         git \
+        openssh-client \
         py-pip \
-        ssh \
     && pip install awscli \
     && curl -fSL https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz -o hugo.tar.gz \
     && mkdir -p /tmp/hugo \
