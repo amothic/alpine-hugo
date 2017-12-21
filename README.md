@@ -1,4 +1,4 @@
-alpine-hugo for circleci deploy
+alpine-hugo for circleci deploy   
 include awscli and git
 
 `.circleci/config.yml`
@@ -25,7 +25,7 @@ jobs:
           command: |
             aws s3 sync public s3://< your bucket name >/ --delete
       - run:
-          name: Create invalidation to cloudfront
+          name: Create invalidation
           command: |
             aws configure set preview.cloudfront true
             aws cloudfront create-invalidation --distribution-id < your distribution id > --paths "/*"
