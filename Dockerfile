@@ -1,6 +1,6 @@
-FROM alpine:3.6
+FROM alpine:latest
 
-ENV HUGO_VERSION 0.26
+ENV HUGO_VERSION 0.54.0
 
 RUN sed -ex \
     && apk add --no-cache --virtual .build-deps \
